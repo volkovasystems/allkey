@@ -1,0 +1,38 @@
+{
+  "name": "allkey",
+  "version": "0.0.0",
+  "description": "Checks if all keys exists on the entity.",
+  "main": "allkey.deploy.js",
+  "support": "allkey.support.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "check",
+    "all",
+    "key",
+    "exist",
+    "entity",
+    "allkey"
+  ],
+  "homepage": "https://github.com/volkovasystems/allkey",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "resolutions": {
+    "doubt": "^0.26.0",
+    "stringe": "^0.3.0",
+    "raze": "^0.29.0"
+  },
+  "dependencies": {
+    "doubt": "^0.26.0",
+    "kein": "^0.21.0",
+    "portel": "^0.3.0",
+    "raze": "^0.29.0"
+  }
+}
