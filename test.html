@@ -1,8 +1,36 @@
+<!DOCTYPE html>
 <html>
 	<head>
-		<script
-			type="application/javascript"
-			src="./allkey.deploy.js">
-		</script>
+		<title>allkey unit test</title>
+
+		<link rel="stylesheet" href="https://code.jquery.com/qunit/qunit-2.3.2.css">
+
+		<script type="application/javascript" src="https://code.jquery.com/qunit/qunit-2.3.2.js"></script>
+
+		<script type="application/javascript" src="./allkey.deploy.js"></script>
 	</head>
+
+	<body>
+		<div id="qunit"></div>
+
+		<div id="qunit-fixture"></div>
+
+		<script type="application/javascript">
+			QUnit.test( "allkey unit test", function( assert ) {
+
+				assert.equal( allkey( "toString", NaN ), true, "should be true" );
+
+				assert.equal( allkey( "toString", 123 ), true, "should be true" );
+
+				assert.equal( allkey( [ "toString", "valueOf" ], 123 ), true, "should be true" );
+
+				assert.equal( allkey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true, "should be true" );
+
+				assert.equal( allkey( "property", { "property": "value" } ), true, "should be true" );
+
+				assert.equal( allkey( [ "toString", "valueOf", "yeah" ], false ), false, "should be false" );
+				
+			} );
+		</script>
+	</body>
 </html>

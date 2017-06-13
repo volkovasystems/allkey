@@ -6,8 +6,6 @@ const allkey = require( "./allkey.js" );
 
 assert.equal( allkey( "toString", NaN ), true, "should be true" );
 
-assert.equal( allkey( "toString", undefined ), true, "should be true" );
-
 assert.equal( allkey( "toString", 123 ), true, "should be true" );
 
 assert.equal( allkey( [ "toString", "valueOf" ], 123 ), true, "should be true" );
