@@ -1,6 +1,6 @@
 {
   "name": "allkey",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Checks if all keys exists on the entity.",
   "main": "allkey.deploy.js",
   "support": "allkey.support.js",
