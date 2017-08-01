@@ -68,3 +68,28 @@ const allkey = require( "./allkey.support.js" );
 //: @bridge:
 const path = require( "path" );
 //: @end-bridge
+
+//: @bridge:
+
+describe( "allkey", ( ) => {
+
+	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
+
+	describe( "`allkey( 'toString', null )`", ( ) => {
+
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+				function( ){
+					return allkey( "toString", null );
+				}
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+
+	} );
+} );
+
+//: @end-bridge
