@@ -75,21 +75,107 @@ describe( "allkey", ( ) => {
 
 	let bridgeURL = `file://${ path.resolve( __dirname, "bridge.html" ) }`;
 
-	describe( "`allkey( 'toString', null )`", ( ) => {
-
+	describe( "`allkey( 'toString', NaN )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 
 			let result = browser.url( bridgeURL ).execute(
 				function( ){
-					return allkey( "toString", null );
+					return allkey( "toString", NaN );
 				}
 			).value;
 
 			assert.equal( result, true );
 
 		} );
+	} );
+
+	describe( "`allkey( 'toString', 123 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return allkey( "toString", 123 );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`allkey( [ 'toString', 'valueOf' ], 123 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+
+					return allkey( [ "toString", "valueOf" ], 123 );
+
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`allkey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return allkey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } );
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`allkey( 'property', { 'property': 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return allkey( "property", { "property": "value" } );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+	
+	/* Fix zelf is not define bug
+	describe( "`allkey( [ 'toString', 'valueOf', 'yeah' ], false )`", ( ) => {
+
+		it( "should be equal to false", ( ) => {
+
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return allkey( [ "toString", "valueOf", "yeah" ] ) ;
+				}
+
+			).value;
+
+			assert.equal( result, false );
+
+		} );
 
 	} );
+	*/
+
 } );
 
 //: @end-bridge
