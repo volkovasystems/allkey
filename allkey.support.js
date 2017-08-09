@@ -49,18 +49,16 @@
               
               	@include:
               		{
-              			"doubt": "doubt",
               			"kein": "kein",
-              			"portel": "portel",
-              			"raze": "raze"
+              			"raze": "raze",
+              			"zelf": "zelf"
               		}
               	@end-include
               */
 
-var doubt = require("doubt");
 var kein = require("kein");
-var portel = require("portel");
 var raze = require("raze");
+var zelf = require("zelf");
 
 var allkey = function allkey(key, entity) {
 	/*;
@@ -77,23 +75,11 @@ var allkey = function allkey(key, entity) {
                                            	@end-meta-configuration
                                            */
 
-	if (!doubt(key, AS_ARRAY)) {
-		key = [key];
-	}
-
-	if (arguments.length == 2) {
-		entity = portel(entity);
-
-	} else {
+	if (arguments.length == 1) {
 		entity = zelf(this);
 	}
 
-	try {
-		return raze(key).every(function (key) {return kein(key, entity);});
-
-	} catch (error) {
-		throw new Error("cannot check all keys, " + error.stack);
-	}
+	return raze(key).every(function (key) {return kein(key, entity);});
 };
 
 module.exports = allkey;
