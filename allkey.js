@@ -57,10 +57,9 @@
 	@end-include
 */
 
-const doubt = require( "doubt" );
 const kein = require( "kein" );
-const portel = require( "portel" );
 const raze = require( "raze" );
+const zelf = require( "zelf" );
 
 const allkey = function allkey( key, entity ){
 	/*;
@@ -77,23 +76,11 @@ const allkey = function allkey( key, entity ){
 		@end-meta-configuration
 	*/
 
-	if( !doubt( key, AS_ARRAY ) ){
-		key = [ key ];
-	}
-
-	if( arguments.length == 2 ){
-		entity = portel( entity );
-
-	}else{
+	if( arguments.length == 1 ){
 		entity = zelf( this );
 	}
 
-	try{
-		return raze( key ).every( ( key ) => kein( key, entity ) );
-
-	}catch( error ){
-		throw new Error( `cannot check all keys, ${ error.stack }` );
-	}
+	return raze( key ).every( ( key ) => kein( key, entity ) );
 };
 
 module.exports = allkey;
