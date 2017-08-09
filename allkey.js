@@ -49,10 +49,9 @@
 
 	@include:
 		{
-			"doubt": "doubt",
 			"kein": "kein",
-			"portel": "portel",
-			"raze": "raze"
+			"raze": "raze",
+			"zelf": "zelf"
 		}
 	@end-include
 */
