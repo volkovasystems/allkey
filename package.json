@@ -1,14 +1,17 @@
 {
 	"name": "allkey",
-	"version": "0.4.0",
+	"version": "0.5.0",
 	"description": "Checks if all keys exists on the entity.",
 	"main": "allkey.js",
 	"support": "allkey.support.js",
 	"deploy": "allkey.deploy.js",
 	"browser": "allkey.browser.js",
 	"scripts": {
+		"pristine": "rsetmod clean && flxc execute ./.install.sh",
+		"clear": "rsetmod clean --clear",
 		"build": "babel allkey.js --out-file allkey.support.js --source-maps && webpack --progress --display-modules",
-		"test": "mocha allkey-test.js"
+		"pretest": "npm run clear && npm run build",
+		"test": "node allkey-test.js"
 	},
 	"repository": {
 		"type": "git",

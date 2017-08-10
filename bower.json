@@ -1,34 +1,34 @@
 {
-	"name": "allkey",
-	"version": "0.4.0",
-	"description": "Checks if all keys exists on the entity.",
-	"main": "allkey.deploy.js",
-	"support": "allkey.support.js",
-	"authors": [
-		"Richeve S. Bebedor <richeve.bebedor@gmail.com>",
-		"John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
-		"Vinse Vinalon <vinsevinalon@gmail.com>"
-	],
-	"license": "MIT",
-	"keywords": [
-		"check",
-		"all",
-		"key",
-		"exist",
-		"entity",
-		"allkey"
-	],
-	"homepage": "https://github.com/volkovasystems/allkey",
-	"ignore": [
-		"**/.*",
-		"node_modules",
-		"bower_components",
-		"test",
-		"tests"
-	],
-	"dependencies": {
-		"kein": "^0.30.0",
-		"raze": "^0.34.0",
-		"zelf": "^0.14.0"
-	}
+  "name": "allkey",
+  "version": "0.5.0",
+  "description": "Checks if all keys exists on the entity.",
+  "main": "allkey.deploy.js",
+  "support": "allkey.support.js",
+  "authors": [
+    "Richeve S. Bebedor <richeve.bebedor@gmail.com>",
+    "John Lenon Maghanoy <johnlenonmaghanoy@gmail.com>",
+    "Vinse Vinalon <vinsevinalon@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "check",
+    "all",
+    "key",
+    "exist",
+    "entity",
+    "allkey"
+  ],
+  "homepage": "https://github.com/volkovasystems/allkey",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "kein": "^0.30.0",
+    "raze": "^0.34.0",
+    "zelf": "^0.14.0"
+  }
 }
