@@ -173,6 +173,23 @@ describe( "allkey", ( ) => {
 	} );
 
 
+	describe( "`allkey( 'toString', null )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return allkey( "toString", null );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+
 	describe( "`allkey( [ Symbol( 'hello' ), Symbol( 'hi' ) ], { [ Symbol( 'hello' ) ]: 123, [ Symbol( 'hi' ) ]: 123 } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			//: @ignore:
