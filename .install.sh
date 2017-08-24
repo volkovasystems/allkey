@@ -1,9 +1,8 @@
 yarn add \
 babel-runtime \
-doubt \
 kein \
-portel \
 raze \
+zelf \
 --save && \
 yarn add \
 babel-cli \
@@ -30,9 +29,8 @@ webpack \
 yargs \
 --dev && \
 bower install \
-doubt \
 kein \
-portel \
 raze \
+zelf \
 --save \
 --force-latest
