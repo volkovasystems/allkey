@@ -154,17 +154,15 @@ describe( "allkey", ( ) => {
 
 		} );
 	} );
-	
-	/* Fix zelf is not define bug
+
+
 	describe( "`allkey( [ 'toString', 'valueOf', 'yeah' ], false )`", ( ) => {
-
 		it( "should be equal to false", ( ) => {
-
 
 			let result = browser.url( bridgeURL ).execute(
 
 				function( ){
-					return allkey( [ "toString", "valueOf", "yeah" ] ) ;
+					return allkey( [ "toString", "valueOf", "yeah" ], false ) ;
 				}
 
 			).value;
@@ -172,9 +170,30 @@ describe( "allkey", ( ) => {
 			assert.equal( result, false );
 
 		} );
-
 	} );
-	*/
+
+
+	describe( "`allkey( [ Symbol( 'hello' ), Symbol( 'hi' ) ], { [ Symbol( 'hello' ) ]: 123, [ Symbol( 'hi' ) ]: 123 } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			//: @ignore:
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+
+					let hello = Symbol( "hello" );
+					let hi = Symbol( "hi" );
+					let object = { [ hello ]: 123, [ hi ]: 123 };
+
+					return allkey( [ hello, hi ], object );
+
+				}
+
+			).value;
+			//: @end-ignore
+			assert.equal( result, true );
+
+		} );
+	} );
 
 } );
 
