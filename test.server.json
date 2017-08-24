@@ -1,16 +1,130 @@
 {
-  "stats": {
-    "suites": 0,
-    "tests": 0,
-    "passes": 0,
-    "pending": 0,
-    "failures": 0,
-    "start": "2017-08-21T05:12:15.342Z",
-    "end": "2017-08-21T05:12:15.342Z",
-    "duration": 0
-  },
-  "tests": [],
-  "pending": [],
-  "failures": [],
-  "passes": []
+	"stats": {
+		"suites": 9,
+		"tests": 8,
+		"passes": 8,
+		"pending": 0,
+		"failures": 0,
+		"start": "2017-08-24T11:22:53.305Z",
+		"end": "2017-08-24T11:22:53.314Z",
+		"duration": 9
+	},
+	"tests": [
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( 'toString', NaN )` should be equal to true",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( 'toString', 123 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( [ 'toString', 'valueOf' ], 123 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( 'property', { 'property': 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "allkey `allkey( [ 'toString', 'valueOf', 'yeah' ], false )` should be equal to false",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( 'toString', null )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( [ Symbol( 'hello' ), Symbol( 'hi' ) ], { [ Symbol( 'hello' ) ]: 123, [ Symbol( 'hi' ) ]: 123 } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	],
+	"pending": [],
+	"failures": [],
+	"passes": [
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( 'toString', NaN )` should be equal to true",
+			"duration": 2,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( 'toString', 123 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( [ 'toString', 'valueOf' ], 123 )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( 'property', { 'property': 'value' } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to false",
+			"fullTitle": "allkey `allkey( [ 'toString', 'valueOf', 'yeah' ], false )` should be equal to false",
+			"duration": 1,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( 'toString', null )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		},
+		{
+			"title": "should be equal to true",
+			"fullTitle": "allkey `allkey( [ Symbol( 'hello' ), Symbol( 'hi' ) ], { [ Symbol( 'hello' ) ]: 123, [ Symbol( 'hi' ) ]: 123 } )` should be equal to true",
+			"duration": 0,
+			"currentRetry": 0,
+			"err": {}
+		}
+	]
 }

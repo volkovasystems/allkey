@@ -66,3 +66,85 @@ const allkey = require( "./allkey.js" );
 
 
 
+//: @server:
+
+describe( "allkey", ( ) => {
+
+	describe( "`allkey( 'toString', NaN )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			assert.equal( allkey( "toString", NaN ), true );
+
+		} );
+	} );
+
+	describe( "`allkey( 'toString', 123 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			assert.equal( allkey( "toString", 123 ), true );
+
+		} );
+	} );
+
+	describe( "`allkey( [ 'toString', 'valueOf' ], 123 )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			assert.equal( allkey( [ "toString", "valueOf" ], 123 ), true );
+
+		} );
+	} );
+
+	describe( "`allkey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			assert.equal( allkey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );
+
+		} );
+	} );
+
+	describe( "`allkey( 'property', { 'property': 'value' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			assert.equal( allkey( "property", { "property": "value" } ), true );
+
+		} );
+	} );
+
+
+	describe( "`allkey( [ 'toString', 'valueOf', 'yeah' ], false )`", ( ) => {
+		it( "should be equal to false", ( ) => {
+
+			assert.equal( allkey( [ "toString", "valueOf", "yeah" ], false ), false );
+
+		} );
+	} );
+
+
+	describe( "`allkey( 'toString', null )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			assert.equal( allkey( "toString", null ), true );
+
+		} );
+	} );
+
+
+	describe( "`allkey( [ Symbol( 'hello' ), Symbol( 'hi' ) ], { [ Symbol( 'hello' ) ]: 123, [ Symbol( 'hi' ) ]: 123 } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+
+			let hello = Symbol( "hello" );
+			let hi = Symbol( "hi" );
+			let object = { [ hello ]: 123, [ hi ]: 123 };
+
+			assert.equal( allkey( [ hello, hi ], object ), true );
+
+		} );
+	} );
+
+} );
+
+//: @end-server
+
+
+
+
