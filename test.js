@@ -94,6 +94,12 @@ describe( "allkey", ( ) => {
 		} );
 	} );
 
+	describe( "`allkey( [ 0, 1 ], { 0: 'hello', 1: 'world' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( allkey( [ 0, 1 ], { 0: "hello", 1: "world" } ), true );
+		} );
+	} );
+
 	describe( "`allkey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( allkey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );
