@@ -98,6 +98,12 @@ describe( "allkey", ( ) => {
 		} );
 	} );
 
+	describe( "`allkey( [ 0, 1 ], { 0: 'hello', 1: 'world' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( allkey( [ 0, 1 ], { 0: "hello", 1: "world" } ), true );
+		} );
+	} );
+
 	describe( "`allkey( Symbol.for( 'property' ), { [ Symbol.for( 'property' ) ]: 'value' } )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( allkey( Symbol.for( "property" ), { [ Symbol.for( "property" ) ]: "value" } ), true );
@@ -168,6 +174,12 @@ describe( "allkey", ( ) => {
 	describe( "`allkey( [ 'toString', 'valueOf' ], [ 1, 2, 3 ] )`", ( ) => {
 		it( "should be equal to true", ( ) => {
 			assert.equal( allkey( [ "toString", "valueOf" ], [ 1, 2, 3 ] ), true );
+		} );
+	} );
+
+	describe( "`allkey( [ 0, 1 ], { 0: 'hello', 1: 'world' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			assert.equal( allkey( [ 0, 1 ], { 0: "hello", 1: "world" } ), true );
 		} );
 	} );
 
@@ -272,6 +284,21 @@ describe( "allkey", ( ) => {
 
 				function( ){
 					return allkey( [ "toString", "valueOf" ], [ 1, 2, 3 ] );
+				}
+
+			).value;
+
+			assert.equal( result, true );
+
+		} );
+	} );
+
+	describe( "`allkey( [ 0, 1 ], { 0: 'hello', 1: 'world' } )`", ( ) => {
+		it( "should be equal to true", ( ) => {
+			let result = browser.url( bridgeURL ).execute(
+
+				function( ){
+					return allkey( [ 0, 1 ], { 0: "hello", 1: "world" } );
 				}
 
 			).value;
